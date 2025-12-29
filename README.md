@@ -395,6 +395,40 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   - [VLLM](https://github.com/vllm-project/vllm) for fast inference
   - [Accelerate](https://github.com/huggingface/accelerate) for distributed training
 
+## ⚡ Project Optimizations
+
+The project has been optimized for better maintainability, code reuse, and error handling:
+
+### 🛠️ New Utility Modules
+
+- **`utils/config.py`**: Centralized configuration management with environment variable support
+- **`utils/data_utils.py`**: Reusable data loading and preprocessing functions
+- **`utils/logging_utils.py`**: Proper logging setup (replaces global warning suppression)
+- **`utils/trainer_base.py`**: Base trainer class with common training functionality
+
+### 📈 Benefits
+
+- ✅ **Reduced Code Duplication**: Common functionality extracted into reusable utilities
+- ✅ **Better Error Handling**: Proper validation and error messages throughout
+- ✅ **Environment Variables**: Configurable paths via `CHECKPOINT_DIR`, `DATA_DIR`, etc.
+- ✅ **Improved Logging**: Structured logging instead of warning suppression
+- ✅ **Type Hints**: Better IDE support and documentation
+
+### 📚 Optimization Guide
+
+See [OPTIMIZATION_GUIDE.md](OPTIMIZATION_GUIDE.md) for:
+- Detailed migration guide
+- Usage examples
+- Environment variable configuration
+- Backward compatibility notes
+
+### 🔄 Optimized Scripts
+
+- **`process_data_optimized.py`**: Improved data processing with error handling
+- **`llm_qlora_optimized.py`**: Example of refactored training script using utilities
+
+> 💡 **Note**: Optimized scripts are provided as examples. Existing scripts continue to work. You can migrate gradually.
+
 ## 🔗 Useful Links
 
 - 🌐 [LMSYS Chatbot Arena](https://chat.lmsys.org/?arena)
